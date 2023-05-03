@@ -1,0 +1,8 @@
+.profilecontent {
+	grid-area: c;
+	background-color: rgb(154, 209, 255);
+}
+.posts {
+	padding: 10px;
+	background: red;
+}

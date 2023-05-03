@@ -1,0 +1,31 @@
+.columns {
+	display: grid;
+	grid-template-areas:
+	"users messages"
+}
+
+.users {
+	grid-area: users;
+}
+
+.content {
+  background: rgb(143, 216, 255);
+  display: grid;
+  grid-template-areas:
+    "header header"
+    "users messages";
+}
+
+.header {
+  grid-area: header;
+}
+
+
+
+.messages {
+  grid-area: messages;
+}
+
+.messages-item {
+  grid-area: messages;
+}

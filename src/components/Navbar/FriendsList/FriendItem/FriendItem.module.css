@@ -1,0 +1,9 @@
+.pic {
+	height: 20px;
+	width: 20px;
+	border-radius: 50%;
+}
+
+.item {
+padding: 5px;
+}

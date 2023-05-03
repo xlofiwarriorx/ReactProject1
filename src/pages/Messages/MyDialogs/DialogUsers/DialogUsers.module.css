@@ -1,0 +1,7 @@
+.users {
+	grid-area: users;
+ }
+ 
+ .users .active {
+	color: gold;
+ }

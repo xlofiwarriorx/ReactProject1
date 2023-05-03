@@ -1,0 +1,24 @@
+.users-item-wrapper {
+	padding: 5px;
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+}
+.users-item {
+	/* grid-area: users; */
+	text-decoration: none;
+	color: black;
+	
+	}
+	.users-item:visited {
+		color: black;
+	}
+
+	.users-item .active {
+		color: gold;
+	}
+.pic {
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+}
