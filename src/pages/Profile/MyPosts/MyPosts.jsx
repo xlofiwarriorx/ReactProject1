@@ -13,19 +13,22 @@ import Input from "../../../components/Input/Input";
 
 
 const MyPosts = (props) => {
+
+
 	const getref = (ref)=>{
 		let text = ref.current.value
-		props.addPost()
+		// props.store.setPost()
+		props.store.dispatch({type: 'SET-POST'})
 	}
 
 	let change = (ref)=>{
-		console.log(ref.current.value)
-		props.updateNewPostText(ref.current.value)
+		// props.store.setNewPostText.bind(props.store)(ref.current.value)
+		props.store.dispatch({type:'SET-NEW-POST-TEXT', text: ref.current.value})
 	}
 
+	const state=props.store.getState()
 
-
-	let dialogsElements = props.posts.map(post=>{
+	let dialogsElements = state.profile.posts.map(post=>{
 		return (
 			<Post
 			  likeCount={post.likes}
@@ -38,7 +41,7 @@ const MyPosts = (props) => {
 
   return (
     <div className={cl.posts}>
-		<Input buttonName = 'add post'change={change} value={props.newPostText} updateNewPostText={props.updateNewPostText} getref={getref} onClick={getref}/> 
+		<Input buttonName = 'add post'change={change} value={state.profile.newPostText}  onClick={getref}/> 
 		{dialogsElements}
     </div>
   );

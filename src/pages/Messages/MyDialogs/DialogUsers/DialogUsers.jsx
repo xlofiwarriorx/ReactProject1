@@ -4,7 +4,7 @@ import cl from './DialogUsers.module.css'
 
 
 const DialogUsers = (props) => {
-	let users = props.state.map((user)=>(
+	let users = props.state.dialogs.map((user)=>(
 		<DialogUsersItem id={user.id} name={user.name} pic={user.pic}/>
 	))
 	return (

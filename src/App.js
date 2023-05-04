@@ -15,11 +15,12 @@ function App(props) {
     <BrowserRouter>
 	 <div className="app-wrapper">
 	 	<Header/>
-		<Navbar state={props.state.dialogs}/>
+		<Navbar state={props.store.getState().dialogs}/>
 		<Routes>
         {/* <Route path="*" element={<Navigate to={"/profile"} />}></Route> */}
-        <Route path="/profile" element={<Profile updateNewPostText={props.updateNewPostText} addPost={props.addPost} state={props.state.profile} className={'app-wrapper'}/>}></Route>
-        <Route path="/messages" element={<Messages addMessage={props.addMessage} updateChat={props.updateChat} state={props.state.dialogs} newMessage={props.state.newMessage} className={'app-wrapper'}/>}></Route>
+        {/* <Route path="/messages" element={<Messages addMessage={props.addMessage} updateChat={props.updateChat} state={props.state.dialogs} newMessage={props.state.newMessage} className={'app-wrapper'}/>}></Route> */}
+        <Route path="/messages" element={<Messages store={props.store} className={'app-wrapper'}/>}></Route>
+        <Route path="/profile" element={<Profile  store={props.store} className={'app-wrapper'}/>}></Route>
         <Route path="/news" element={<News className={'app-wrapper'}/>}></Route>
         <Route path="/music" element={<Music className={'app-wrapper'}/>}></Route>
         <Route path="/settings" element={<Settings className={'app-wrapper'}/>}></Route>

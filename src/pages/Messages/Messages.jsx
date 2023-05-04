@@ -5,10 +5,11 @@ import Navbar from '../../components/Navbar/Navbar';
 import MyDialogs from './MyDialogs/MyDialogs';
 import PagesHeader from '../PagesComponents/PagesHeader/PagesHeader';
 import Input from '../../components/Input/Input'
+import state from '../../redux/state';
 // import DefaultContent from '../../components/DefaultContent/DefaultContent';
 
 const Messages = (props) => {
-
+	
 	// const ref = React.createRef()
 
 	// const send = ()=>{
@@ -19,20 +20,25 @@ const Messages = (props) => {
 	// addMessage={props.addMessage} 
 	// updateChat={props.updateChat}
 	const upd = (ref)=> {
-		props.updateChat(ref.current.value)
+		props.store.dispatch({type: 'SET-UPDATE-CHAT', text: ref.current.value })
 	}
 	const add = (ref)=> {
-		props.addMessage()
+		props.store.dispatch({type: 'SET-MESSAGE'})
 	}
+ 
+	const state=props.store.getState.bind(props.store)()
+	
+
 
 	return (
 		<div className={cl.columns}>
 			<PagesHeader title='DIALOGS'/>
-			<MyDialogs  state={props.state} dialogsData={props.state.dialogsData} messagesData={props.state.messagesData}/>
-			<Input value={props.newMessage} onClick={add} change={upd} buttonName={'send'}/>
+			<MyDialogs state={state}/>
+			{/* <MyDialogs  state={props.state} dialogsData={props.state.dialogsData} messagesData={props.state.messagesData}/> */}
+			{/* <Input value={props.newMessage} onClick={add} change={upd} buttonName={'send'}/> */}
+			<Input value={state.newMessage} onClick={add} change={upd} buttonName={'send'}/>
+			{/* <Input props={props} /> */}
 		</div>
-
-	);
+	)
 };
-
 export default Messages;

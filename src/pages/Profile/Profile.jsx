@@ -7,10 +7,12 @@ import Navbar from "../../components/Navbar/Navbar";
 import ProfileInfo from "./ProfileInfo/ProfileInfo";
 
 const Profile = (props) => {
+
   return (
     <div className={cl.profilecontent}>
       <ProfileInfo />
-      <MyPosts newPostText={props.state.newPostText} updateNewPostText={props.updateNewPostText} className={cl.posts} addPost={props.addPost} posts={props.state.posts}/>
+      <MyPosts store={props.store} className={cl.posts}/>
+      {/* <MyPosts newPostText={props.state.newPostText} updateNewPostText={props.updateNewPostText} className={cl.posts} addPost={props.addPost} posts={props.state.posts}/> */}
     </div>
   );
 };

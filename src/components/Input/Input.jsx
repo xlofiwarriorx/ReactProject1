@@ -10,6 +10,7 @@ const Input = (props) => {
 	let ref = React.createRef()
 
 
+
 	return (
       <div>
         <textarea value={props.value} onChange={()=>{props.change(ref)}} ref={ref}/>

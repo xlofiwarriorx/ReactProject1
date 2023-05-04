@@ -3,23 +3,25 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import state, {subscribe, updateChat, addMessage, addPost, updateNewPostText } from './redux/state';
+import {store } from './redux/state';
 
 
 // addPost('hey')
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
- let renderEntireTree = (state)=>{
+ let renderEntireTree = ()=>{
 	root.render(
 		<React.StrictMode>
-		  <App state={state} updateChat={updateChat} addMessage={addMessage} addPost={addPost} updateNewPostText={updateNewPostText}/>
+		  <App store={store}/>
 		</React.StrictMode>
 	 );
 }
 
-renderEntireTree(state)
-subscribe(renderEntireTree)
+// renderEntireTree(state)
+renderEntireTree()
+
+store.setSubscribe(renderEntireTree)
 
 
 
