@@ -5,7 +5,7 @@ import Navbar from '../../components/Navbar/Navbar';
 import MyDialogs from './MyDialogs/MyDialogs';
 import PagesHeader from '../PagesComponents/PagesHeader/PagesHeader';
 import Input from '../../components/Input/Input'
-import state from '../../redux/state';
+import state, { setMessageCreator, setUpdateChat } from '../../redux/state';
 // import DefaultContent from '../../components/DefaultContent/DefaultContent';
 
 const Messages = (props) => {
@@ -20,10 +20,11 @@ const Messages = (props) => {
 	// addMessage={props.addMessage} 
 	// updateChat={props.updateChat}
 	const upd = (ref)=> {
-		props.store.dispatch({type: 'SET-UPDATE-CHAT', text: ref.current.value })
+		// props.store.dispatch(setUpdateChat(ref.current.value))
+		props.store.dispatch(setUpdateChat(ref.current.value))
 	}
 	const add = (ref)=> {
-		props.store.dispatch({type: 'SET-MESSAGE'})
+		props.store.dispatch(setMessageCreator())
 	}
  
 	const state=props.store.getState.bind(props.store)()

@@ -2,8 +2,7 @@ import React from "react";
 import cl from "./MyPosts.module.css";
 import Post from "./Post/Post";
 import Input from "../../../components/Input/Input";
-
-
+import { setPostActionCreator, setNewPostTextActionCreator } from "../../../redux/state";
 
 
 
@@ -18,12 +17,12 @@ const MyPosts = (props) => {
 	const getref = (ref)=>{
 		let text = ref.current.value
 		// props.store.setPost()
-		props.store.dispatch({type: 'SET-POST'})
+		props.store.dispatch(setPostActionCreator())
 	}
 
 	let change = (ref)=>{
 		// props.store.setNewPostText.bind(props.store)(ref.current.value)
-		props.store.dispatch({type:'SET-NEW-POST-TEXT', text: ref.current.value})
+		props.store.dispatch(setNewPostTextActionCreator(ref.current.value))
 	}
 
 	const state=props.store.getState()
