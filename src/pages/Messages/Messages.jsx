@@ -5,7 +5,7 @@ import Navbar from '../../components/Navbar/Navbar';
 import MyDialogs from './MyDialogs/MyDialogs';
 import PagesHeader from '../PagesComponents/PagesHeader/PagesHeader';
 import Input from '../../components/Input/Input'
-import state, { setMessageCreator, setUpdateChat } from '../../redux/state';
+import state, { setMessageCreator, setUpdateChat } from '../../redux/dialogs-reducer';
 // import DefaultContent from '../../components/DefaultContent/DefaultContent';
 
 const Messages = (props) => {
@@ -27,7 +27,7 @@ const Messages = (props) => {
 		props.store.dispatch(setMessageCreator())
 	}
  
-	const state=props.store.getState.bind(props.store)()
+	const state=props.store.getState()
 	
 
 
@@ -37,7 +37,7 @@ const Messages = (props) => {
 			<MyDialogs state={state}/>
 			{/* <MyDialogs  state={props.state} dialogsData={props.state.dialogsData} messagesData={props.state.messagesData}/> */}
 			{/* <Input value={props.newMessage} onClick={add} change={upd} buttonName={'send'}/> */}
-			<Input value={state.newMessage} onClick={add} change={upd} buttonName={'send'}/>
+			<Input value={state.dialogs.newMessage} onClick={add} change={upd} buttonName={'send'}/>
 			{/* <Input props={props} /> */}
 		</div>
 	)

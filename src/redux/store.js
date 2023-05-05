@@ -1,10 +1,6 @@
 import { dialogsReducer } from "./dialogs-reducer"
 import { profileReducer } from "./profile-reducer"
 
-const SET_POST = 'SET-POST'
-const SET_NEW_POST_TEXT = 'SET-NEW-POST-TEXT'
-const SET_MESSAGE = 'SET-MESSAGE'
-const SET_UPDATE_CHAT = 'SET-UPDATE-CHAT'
 
 
 // let renderEntireTree = ()=>{}
@@ -39,7 +35,7 @@ export let store = {
 		}
 	,
 
-	setSubscribe(observer) {
+	subscribe(observer) {
 		this.renderEntireTree = observer
 		},
 
@@ -50,20 +46,10 @@ export let store = {
 	}
 }
 
-export const setMessageCreator = ()=>{
-	return {type: 	SET_MESSAGE}
-}
-export const setUpdateChat = (text)=>{
-	return {type: 	SET_UPDATE_CHAT, text: text}
-}
 
 
-export const setPostActionCreator = ()=>{
-	return {type: SET_POST}
-}
-export const setNewPostTextActionCreator = (text)=>{
-	return {type:SET_NEW_POST_TEXT, text: text}
-}
+
+
 // export const addPost = ()=>{
 // 	let newPost = { id:3, name:'test test', likes: 0, message:state.profile.newPostText}
 // 	state.profile.posts.push(newPost)

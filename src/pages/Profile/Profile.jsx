@@ -7,7 +7,6 @@ import Navbar from "../../components/Navbar/Navbar";
 import ProfileInfo from "./ProfileInfo/ProfileInfo";
 
 const Profile = (props) => {
-
   return (
     <div className={cl.profilecontent}>
       <ProfileInfo />

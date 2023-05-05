@@ -7,7 +7,7 @@ import ChatItem from './ChatItem/ChatItem';
 
 const DialogChats = (props) => {
 
-	let chats = props.state.dialogs.map((chat)=>(
+	let chats = props.state.dialogs.users.map((chat)=>(
 		<ChatItem message={chat.message} pic={chat.pic}/>
 	))
 	return (

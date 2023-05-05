@@ -2,7 +2,7 @@ import React from "react";
 import cl from "./MyPosts.module.css";
 import Post from "./Post/Post";
 import Input from "../../../components/Input/Input";
-import { setPostActionCreator, setNewPostTextActionCreator } from "../../../redux/state";
+import { setPostActionCreator, setNewPostTextActionCreator } from "../../../redux/profile-reducer";
 
 
 
@@ -12,7 +12,6 @@ import { setPostActionCreator, setNewPostTextActionCreator } from "../../../redu
 
 
 const MyPosts = (props) => {
-
 
 	const getref = (ref)=>{
 		let text = ref.current.value
@@ -26,7 +25,6 @@ const MyPosts = (props) => {
 	}
 
 	const state=props.store.getState()
-
 	let dialogsElements = state.profile.posts.map(post=>{
 		return (
 			<Post

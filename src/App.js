@@ -15,7 +15,7 @@ function App(props) {
     <BrowserRouter>
 	 <div className="app-wrapper">
 	 	<Header/>
-		<Navbar state={props.store.getState().dialogs}/>
+		<Navbar state={props.store.getState().dialogs.users}/>
 		<Routes>
         {/* <Route path="*" element={<Navigate to={"/profile"} />}></Route> */}
         {/* <Route path="/messages" element={<Messages addMessage={props.addMessage} updateChat={props.updateChat} state={props.state.dialogs} newMessage={props.state.newMessage} className={'app-wrapper'}/>}></Route> */}
