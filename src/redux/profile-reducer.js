@@ -10,15 +10,21 @@ let initialState = {
 }
 
 export const profileReducer = (state = initialState, action) => {
-	if(action.type==='SET-POST') {
-		let newPost = { id:3, name:'test test', likes: 0, message:state.newPostText}
-		state.posts.push(newPost)
-		state.newPostText=''
+	switch(action.type) {
+		case SET_POST:
+			const newPost = { id:3, name:'test test', likes: 0, message:state.newPostText}
+		return {
+			...state,
+			posts: state.posts.concat(newPost),
+			newPostText: ''
+		}
+		case SET_NEW_POST_TEXT: 
+		return {
+			...state, 
+			newPostText: action.text
+		}
+		default: return state
 	}
-	else if(action.type==='SET-NEW-POST-TEXT') {
-		state.newPostText = action.text
-	}
-	return state
 }
 
 export const setPostActionCreator = ()=>{

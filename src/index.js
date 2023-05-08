@@ -5,28 +5,30 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import store  from './redux/redux-store';
 import { Provider } from 'react-redux';
+// import StoreContext from './StoreContext';
 
 
 // addPost('hey')
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
- let renderEntireTree = (state)=>{
+//  let renderEntireTree = ()=>{
 	root.render(
 		<React.StrictMode>
 			<Provider store={store}>
-				<App store={store}/>
+				<App/>
 			</Provider>
 		</React.StrictMode>
 	 );
-}
+// }
 
 // renderEntireTree(state)
-renderEntireTree(store.getState())
+// renderEntireTree(store.getState())
+// renderEntireTree()
 
-store.subscribe(()=>{
-	let state = store.getState()
-	renderEntireTree(state)})
+// store.subscribe(()=>{
+// 	let state = store.getState()
+// 	renderEntireTree(state)})
 
 	
 

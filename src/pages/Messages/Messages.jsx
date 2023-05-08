@@ -9,36 +9,17 @@ import state, { setMessageCreator, setUpdateChat } from '../../redux/dialogs-red
 // import DefaultContent from '../../components/DefaultContent/DefaultContent';
 
 const Messages = (props) => {
-	
-	// const ref = React.createRef()
 
-	// const send = ()=>{
-	// 	alert(ref.current.value)
-	// }
-
-	
-	// addMessage={props.addMessage} 
-	// updateChat={props.updateChat}
-	const upd = (ref)=> {
-		// props.store.dispatch(setUpdateChat(ref.current.value))
-		props.store.dispatch(setUpdateChat(ref.current.value))
+	const change = (ref)=> {
+		const value = ref.current.value
+		props.updateChat(value)
 	}
-	const add = (ref)=> {
-		props.store.dispatch(setMessageCreator())
-	}
- 
-	const state=props.store.getState()
-	
-
 
 	return (
 		<div className={cl.columns}>
 			<PagesHeader title='DIALOGS'/>
-			<MyDialogs state={state}/>
-			{/* <MyDialogs  state={props.state} dialogsData={props.state.dialogsData} messagesData={props.state.messagesData}/> */}
-			{/* <Input value={props.newMessage} onClick={add} change={upd} buttonName={'send'}/> */}
-			<Input value={state.dialogs.newMessage} onClick={add} change={upd} buttonName={'send'}/>
-			{/* <Input props={props} /> */}
+			<MyDialogs state={props.state}/>
+			<Input value={props.newMessage} onClick={props.setMessage} change={change} buttonName={'send'}/>
 		</div>
 	)
 };

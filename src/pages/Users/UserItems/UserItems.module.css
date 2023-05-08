@@ -1,0 +1,15 @@
+.content {
+	background: rgb(143, 216, 255);
+	display: grid;
+	grid-template-areas:
+	  "header header"
+	  "users users";
+ }
+
+ .users {
+	grid-area: users;
+ }
+
+ .header {
+	grid-area: header;
+ }

@@ -1,0 +1,9 @@
+.img {
+	width: 40px;
+	height: 40px;
+}
+
+.profilecontent {
+	grid-area: c;
+	background-color: rgb(154, 209, 255);
+}

@@ -12,20 +12,12 @@ import { setPostActionCreator, setNewPostTextActionCreator } from "../../../redu
 
 
 const MyPosts = (props) => {
-
-	const getref = (ref)=>{
-		let text = ref.current.value
-		// props.store.setPost()
-		props.store.dispatch(setPostActionCreator())
-	}
-
 	let change = (ref)=>{
-		// props.store.setNewPostText.bind(props.store)(ref.current.value)
-		props.store.dispatch(setNewPostTextActionCreator(ref.current.value))
+		let value = ref.current.value
+		props.setNewPostText(value)
 	}
 
-	const state=props.store.getState()
-	let dialogsElements = state.profile.posts.map(post=>{
+	let dialogsElements = props.posts.map(post=>{
 		return (
 			<Post
 			  likeCount={post.likes}
@@ -38,7 +30,7 @@ const MyPosts = (props) => {
 
   return (
     <div className={cl.posts}>
-		<Input buttonName = 'add post'change={change} value={state.profile.newPostText}  onClick={getref}/> 
+		<Input buttonName = 'add post'change={change} value={props.newPostText}  onClick={props.setPost}/> 
 		{dialogsElements}
     </div>
   );

@@ -15,11 +15,23 @@ let initialState = {
 export const dialogsReducer = (state = initialState, action) => {
 	switch(action.type) {
 	case SET_MESSAGE :
-		state.users[0].message = state.newMessage
-		state.newMessage = ''
-		return state
+		return {
+			...state,
+		users: state.users.map(elem=>{
+			if(elem.id ===1) {
+				return {
+					...elem, 
+					message: state.newMessage
+				}
+			}
+			return elem
+		}),
+		newMessage: ''
+		 }
 	case SET_UPDATE_CHAT:
-		state.newMessage = action.text
+		return {...state,
+			newMessage: action.text
+		 }
 		return state
 	default: return state
 }
