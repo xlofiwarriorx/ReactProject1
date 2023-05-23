@@ -12,6 +12,7 @@ const Navbar = (props) => {
 			<div className={cl.item}><NavLink to='/news' className={({isActive})=>isActive? `${cl.active}` : ''}>News</NavLink></div>
 			<div className={cl.item}><NavLink to='/music' className={({isActive})=>isActive? `${cl.active}` : ''}>Music</NavLink></div>
 			<div className={cl.item}><NavLink to='/settings' className={({isActive})=>isActive? `${cl.active}` : ''}>Settings</NavLink></div>
+			<div className={cl.item}><NavLink to='/users' className={({isActive})=>isActive? `${cl.active}` : ''}>Users</NavLink></div>
 			<FriendsListContainer/>
 	  </nav>
 	);

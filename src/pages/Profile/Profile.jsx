@@ -8,9 +8,10 @@ import ProfileInfo from "./ProfileInfo/ProfileInfo";
 import MyPostsContainer from "./MyPosts/MyPostsContainer";
 
 const Profile = (props) => {
+	// debugger
   return (
     <div className={cl.profilecontent}>
-      <ProfileInfo />
+      <ProfileInfo profile={props.profile}/>
       <MyPostsContainer className={cl.posts}/>
       {/* <MyPosts newPostText={props.state.newPostText} updateNewPostText={props.updateNewPostText} className={cl.posts} addPost={props.addPost} posts={props.state.posts}/> */}
     </div>

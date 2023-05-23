@@ -11,17 +11,19 @@ import Settings from "./pages/Settings/Settings";
 import MessagesContainer from "./pages/Messages/MessagesContainer";
 import UsersContainer from "./pages/Users/UsersContainer";
 import UserItems from "./pages/Users/UserItems/UserItems";
+import ProfileContainer from "./pages/Profile/ProfileContainer";
+import HeaderContainer from "./components/Header/HeaderContainer";
 // import DefaultContent from "./components/DefaultContent/DefaultContent";
 
 function App(props) {
   return (
     <BrowserRouter>
 	 <div className="app-wrapper">
-	 	<Header/>
+	 	<HeaderContainer/>
 		<Navbar/>
 		<Routes>
         <Route path="/messages" element={<MessagesContainer  className={'app-wrapper'}/>}></Route>
-        <Route path="/profile" element={<Profile  className={'app-wrapper'}/>}></Route>
+        <Route path="/profile/:userId?" element={<ProfileContainer  className={'app-wrapper'}/>}></Route>
         <Route path="/news" element={<News className={'app-wrapper'}/>}></Route>
         <Route path="/music" element={<Music className={'app-wrapper'}/>}></Route>
         <Route path="/settings" element={<Settings className={'app-wrapper'}/>}></Route>
